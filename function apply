@@ -1,0 +1,14 @@
+import numpy as np
+import pandas as pd
+ 
+#定义函数f
+f=lambda x: x.max()-x.min()
+
+df = pd.DataFrame(np.random.randn(4,3),columns=list('bde'),index=['utah', 'ohio', 'texas', 'oregon'])
+print(df)
+ 
+t1 = df.apply(f)
+print(t1)
+ 
+t2 = df.apply(f, axis=1)
+print(t2)
